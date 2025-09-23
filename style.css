@@ -1,5 +1,310 @@
-.alex-brush-regular {
-  font-family: "Alex Brush", cursive;
-  font-weight: 400;
-  font-style: normal;
+*{
+   margin: 0%;
+  padding: 0%;
+  font-family: Michroma; align-items: center; justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  text-align: center;
+  
 }
+
+
+
+::backdrop {
+  display: flex;
+  background-color: white;
+}
+
+@media (min-width : 1201px) {
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    display:flexbox;
+    justify-content:center;
+  }
+
+  .button {
+  background-color: rgb(1, 181, 1);
+  border-radius: 5px;
+  padding-left: 5px; 
+   padding-right: 5px; 
+   cursor: pointer;
+}
+
+
+  .header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+
+
+  }
+
+  .body {
+  display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-image: url(background\ img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bgChange 60s infinite;
+    
+    
+  }
+
+  .nav {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .p {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+  }
+
+  @keyframes bgChange {
+     0%   { background-image: url("background\ img3.png"); }
+  50%  { background-image: url("background\ 2.png"); }
+  100% { background-image: url("background\ img3.png"); }
+    
+  }
+
+}
+
+.footer {
+  display:inline-flexbox;
+  justify-content: center;
+}
+
+@media (max-width : 1200px) {
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    display:flexbox;
+    justify-content:center;
+  }
+
+  .header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+
+
+  }
+
+    .button {
+  background-color: rgb(1, 181, 1);
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px; 
+   cursor: pointer;
+}
+
+  .body {
+  display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-image: url(background\ img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bgChange 60s infinite;
+    
+    
+  }
+
+  .nav {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .p {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+  }
+
+  @keyframes bgChange {
+     0%   { background-image: url("background\ img3.png"); }
+  50%  { background-image: url("background\ 2.png"); }
+  100% { background-image: url("background\ img3.png"); }
+    
+  }
+
+}
+
+.footer {
+  display:inline-flexbox;
+  justify-content: center;
+}
+
+@media (max-width : 900px) {
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    display:flexbox;
+    justify-content:center;
+  }
+
+  .header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+
+
+  }
+
+    .button {
+  background-color: rgb(1, 181, 1);
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px;  
+   cursor: pointer;
+}
+
+  .body {
+  display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-image: url(background\ img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bgChange 60s infinite;
+    
+    
+  }
+
+  .nav {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .p {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+  }
+
+  @keyframes bgChange {
+     0%   { background-image: url("background\ img3.png"); }
+  50%  { background-image: url("background\ 2.png"); }
+  100% { background-image: url("background\ img3.png"); }
+    
+  }
+
+}
+
+.footer {
+  display:inline-flexbox;
+  justify-content: center;
+}
+
+@media (max-width : 600px) {
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    display:flexbox;
+    justify-content:center;
+  }
+
+  .header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+
+
+  }
+
+    .button {
+  background-color: rgb(1, 181, 1);
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px; 
+   cursor: pointer;
+}
+
+  .slogan {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+  }
+
+  .body {
+  display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-image: url(background\ img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bgChange 60s infinite;
+    
+    
+  }
+
+  .nav {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: space-evenly;
+  }
+
+  .p {
+    display:flexbox;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+  }
+
+  @keyframes bgChange {
+     0%   { background-image: url("background\ img3.png"); }
+  50%  { background-image: url("background\ 2.png"); }
+  100% { background-image: url("background\ img3.png"); }
+    
+  }
+
+}
+
+.footer {
+  display:inline-flexbox;
+  justify-content: center;
+}
+
+
+
+
