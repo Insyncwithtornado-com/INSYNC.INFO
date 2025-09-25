@@ -8,8 +8,6 @@
   
 }
 
-
-
 ::backdrop {
   display: flex;
   background-color: white;
@@ -25,7 +23,7 @@
   }
 
   .button {
-  background-color: rgb(1, 181, 1);
+  background-color:rgb(1, 181, 1);
   border-radius: 5px;
   padding-left: 5px; 
    padding-right: 5px; 
@@ -41,7 +39,12 @@
     background-color: rgb(255, 255, 255);
     width: 100%;
 
+  }
 
+    .div {
+    background-color: rgb(255, 255, 255); opacity:75%;
+    border-radius:5%;
+  
   }
 
   .body {
@@ -82,9 +85,12 @@
 }
 
 .footer {
-  display:inline-flexbox;
-  justify-content: center;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
 }
+
 
 @media (max-width : 1200px) {
 
@@ -95,6 +101,7 @@
     justify-content:center;
   }
 
+
   .header {
     display: inline-flex;
     justify-content: center;
@@ -102,8 +109,12 @@
     align-items: center;
     background-color: rgb(255, 255, 255);
     width: 100%;
+  }
 
-
+     .div {
+    background-color: rgb(255, 255, 255); opacity:75%;
+    border-radius:5%;
+  
   }
 
     .button {
@@ -152,9 +163,12 @@
 }
 
 .footer {
-  display:inline-flexbox;
-  justify-content: center;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+   background-color: rgb(255, 255, 255);
 }
+
 
 @media (max-width : 900px) {
 
@@ -163,6 +177,12 @@
     height: 100px;
     display:flexbox;
     justify-content:center;
+  }
+
+       .div {
+    background-color: rgb(255, 255, 255); opacity:75%;
+    border-radius:5%;
+  
   }
 
   .header {
@@ -222,9 +242,12 @@
 }
 
 .footer {
-  display:inline-flexbox;
-  justify-content: center;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+   background-color: rgb(255, 255, 255);
 }
+
 
 @media (max-width : 600px) {
 
@@ -242,8 +265,12 @@
     align-items: center;
     background-color: rgb(255, 255, 255);
     width: 100%;
+  }
 
-
+    .div {
+    background-color: rgb(255, 255, 255); opacity:75%;
+    border-radius:5%;
+  
   }
 
     .button {
@@ -267,7 +294,7 @@
     justify-content: center;
     justify-items: center;
     align-items: center;
-    background-image: url(background\ img3.png);
+    background-image: url(background\ img3\ -\ Mobile.png);
     background-repeat: no-repeat;
     background-size: cover;
     animation: bgChange 60s infinite;
@@ -292,17 +319,20 @@
   }
 
   @keyframes bgChange {
-     0%   { background-image: url("background\ img3.png"); }
-  50%  { background-image: url("background\ 2.png"); }
-  100% { background-image: url("background\ img3.png"); }
+     0%   { background-image: url("background\ img3\ -\ Mobile.png"); height: cover; }
+  50%  { background-image: url("background\ 2\ -\ Mobile.png"); height: cover;  }
+  100% { background-image: url("background\ img3.png");  }
     
   }
 
 }
 
 .footer {
-  display:inline-flexbox;
-  justify-content: center;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  
 }
 
 
