@@ -12,50 +12,161 @@
 <link rel="icon" type="image/x-icon" href="C:\Users\Mtho\Desktop\INSYNCWITHTORNADO\insyncwithtornado.com\Insyncwithtornado\favicon-32x32.png">
 </head>
 
- <header class="header">
+<!-- === MATRIX STICKY HEADER === -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 
-     <img src="IINSYCWITHTORNADO LOGO.png" alt="insync-logo" class="logo">
+<header class="matrix-header">
+  <canvas id="matrix-bg"></canvas>
+  <div class="header-text">WE WOULD HONOR YOUR PARTNERSHIP WITH US IN BUSINESS</div>
+</header>
 
-    <h1 class="Synced-Projects">
-      Synced Projects
-    </h1>
+<style>
+.matrix-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: black;
+  z-index: 1000;
+}
 
-  </header>
+.matrix-header canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+  background: black;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ff80;
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px #00ff80, 0 0 15px #00ff80;
+  animation: floatText 5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes floatText {
+  0%,100% { transform: translate(-50%, -50%) translateY(0); }
+  50%     { transform: translate(-50%, -50%) translateY(-6px); }
+}
+</style>
+
+<script>
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+
+const letters = '01INSYNC@#$%&';
+const fontSize = 14;
+let columns = Math.floor(canvas.width / fontSize);
+const drops = Array.from({ length: columns }, () => Math.random() * canvas.height);
+
+// 🐢 Slow movement (adjust speed here if needed)
+const speed = 0.05; // was 0.3 — now much slower
+
+function draw() {
+  // Very gentle fading effect
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff80';
+  ctx.font = fontSize + 'px monospace';
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops[i] += speed;
+    if (drops[i] * fontSize > canvas.height) drops[i] = 0;
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  columns = Math.floor(canvas.width / fontSize);
+});
+</script>
 
 <body class="body">
 
   <div class="div">
     <u>
  <h3 class="company-slogan">
-      We co-signed them and they turned out legit.
+      WE CO-SIGNED THEM AND THEY TURNED OUT LEGIT.
     </h3>
     </u>
     </div>
 
     <nav class="nav">
-    <a href="index.html" class="nav">Home</a>
-    <a href="About.html" class="nav">About us</a>
-    <a href="Projects.html" class="nav">Projects</a>
-    <button class="button">
-    <a href="Contact Us.html" class="nav">Contact us</a>
-    </button>
-    </nav>
-   <br>
+      
+    <a href="index.html" class="nav">
+      HOME
+    </a>
+    
+    <a href="About.html" class="nav">
+      ABOUT
+    </a>
+    
+    <a href="Projects.html" class="nav">
+      PROJECTS
+    </a>
+    <a href="Contact Us.html" class="nav">
+      <button class="button">CONTACT US</button>
+    </a>
+     </nav>
+      <hr>
 
-    <div class="div">
-      <u>
+  <u>
    <h2>
-    Our Portfolio
+    OUR PORTFOLIO
    </h2>
    </u>
-   </div>
+   
 
   <br><br>
 
-   <div class="div">
-    <h2><u>
-      Business Brokerage Services
+  <u>
+    <h2>
+    WEB DEVELOPMENT SERVICES
+    </h2>
+    </u>
+
+   <div class="textoverlay">
+
+  <br><br>
+<p>
+ 1. We are our first client and we hope to add your business to our wall of successful projects
+</p>
+<br><br>
+<p>
+  <a href="">
+    2. Proof of concept LAW FIRM WEBSITE.
+ </a>
+</p>
+<br><br>
+</div>
+<hr>
+<br><br>
+
+ <h2><u>
+      BUSINESS BROKERAGE SERVICES
     </u></h2>
+
+    <img src="background 2.png" class="image5">
+
+   <div class="textoverlay">
     <br><br>
   <p>
 <a href="https://www.mobilecrushersturkey.com/products/2/mobile-crushing" target="_blank">1. We have had the luxury of being a Marketing partner for Boratas Mobile Crushers and Screening Equipment</a>
@@ -71,22 +182,13 @@
    </div>
 <br><br>
 
- <div class="div">
 
-  <h2>
-    Web Development.
-    </h2>
-
-  <br><br>
-
-<p>
-<a href=""> 1. We are our first client and we hope to add your business to our wall of successful projects </a>
-</p>
-<br><br>
-</div>
 <br><br>
 
-
+<a href="https://wa.me/27749232812" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+<BR><br>
 </body>
 
 

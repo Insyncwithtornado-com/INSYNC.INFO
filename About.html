@@ -11,15 +11,92 @@
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo+Black&family=Bebas+Neue&family=El+Messiri:wght@400..700&family=Michroma&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 </head>
 
- <header class="header">
+<!-- === MATRIX STICKY HEADER === -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 
- <img src="IINSYCWITHTORNADO LOGO.png" alt="insync-logo" class="logo">
-    
-     <h1 class="Sync-In">   
-      Sync In
-    </h1>
+<header class="matrix-header">
+  <canvas id="matrix-bg"></canvas>
+  <div class="header-text">OUR PAST IS AS EQUALLY IMPORTANT AS OUR FUTURE</div>
+</header>
 
-  </header>
+<style>
+.matrix-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: black;
+  z-index: 1000;
+}
+
+.matrix-header canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+  background: black;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ff80;
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px #00ff80, 0 0 15px #00ff80;
+  animation: floatText 5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes floatText {
+  0%,100% { transform: translate(-50%, -50%) translateY(0); }
+  50%     { transform: translate(-50%, -50%) translateY(-6px); }
+}
+</style>
+
+<script>
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+
+const letters = '01INSYNC@#$%&';
+const fontSize = 14;
+let columns = Math.floor(canvas.width / fontSize);
+const drops = Array.from({ length: columns }, () => Math.random() * canvas.height);
+
+// 🐢 Slow movement (adjust speed here if needed)
+const speed = 0.05; // was 0.3 — now much slower
+
+function draw() {
+  // Very gentle fading effect
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff80';
+  ctx.font = fontSize + 'px monospace';
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops[i] += speed;
+    if (drops[i] * fontSize > canvas.height) drops[i] = 0;
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  columns = Math.floor(canvas.width / fontSize);
+});
+</script>
 
 <body class="body">
 
@@ -27,29 +104,43 @@
 
     <u>
   <h3 class="Archives">
-      Archives of how this storm brewed and the aftermath.
+      ARCHIVES OF HOW OUR STORM WAS BREWED AND THE AFTERMATH!
     </h3>
     </u>
     </div>
 
-    <nav class="nav">
-   <a href="index.html" class="nav">Home</a>
-    <a href="About.html" class="nav">About us</a>
-    <a href="Projects.html" class="nav">Projects</a>
-    <button class="button">
-    <a href="Contact Us.html" class="nav">Contact us</a>
-    </button>
-    </nav>
-  <br> <br>
+  <nav class="nav">
+      
+    <a href="index.html" class="nav">
+      HOME
+    </a>
+    
+    <a href="About.html" class="nav">
+      ABOUT
+    </a>
+    
+    <a href="Projects.html" class="nav">
+      PROJECTS
+    </a>
+    <a href="Contact Us.html" class="nav">
+      <button class="button">CONTACT US</button>
+    </a>
 
-  <div class="div">
-    <u>
+     </nav>
+      <hr>
+  <u>
   <h2>
-    Our Inception
+    OUR INCEPTION
   </h2>
   </u>
 
-  <br>
+  <div class="textoverlaygrid3">
+
+    <div class="grid3box2">
+    <img src="IINSYCWITHTORNADO LOGO.png" class="image3">
+  </div>
+
+    <div class="grid3box1">
   
   <p>
     Initially we began as a Biker Apparel online store in 2024 December, that should account for our over the top name. Within months of operating, we realized a potential for more, a better positioning within the grand scheme of things. <br> <br>
@@ -60,20 +151,25 @@
   </p>
   </div>
 
+  </div>
+<hr>
   <br> <br>
 
-  <div class="div">
-    <u>
+     <u>
   <h2>
-    Our Evolution
+    OUR EVOLUTION
   </h2>
   </u>
 
+  <div class="textoverlay">
+ 
   <br>
 
   <p>
     We naturally gravitated towards what we were good at, only this time we were doing it on our terms and for our benefit. <br> <br>
   </p>
+
+  <img src="Matrix (2).png" class="image4">
 
       <p><b>
     REST ASSURED OUR SELF INTEREST AND HONESTY ABOUT IT, IS EXACTLY WHAT MAKES US GREAT AT WHAT WE DO.</b>
@@ -93,10 +189,12 @@
       </b>
       </div>
   </p>
-
-  <BR><br>
-
-
+  <br>
+    <hr>
+    <a href="https://wa.me/27749232812" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+<BR><br>
 </body>
 
     <footer class="footer">

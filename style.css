@@ -5,441 +5,584 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   text-align: center;
+  max-width: 100%;
   
 }
 
 ::backdrop {
   display: flex;
-  background-color: white;
+  background-color:#00ff80;
 }
 
+/*biggest screen-sizes*/
 @media (min-width : 1201px) {
 
-  .logo {
-    width: 100px;
-    height: 100px;
-    display:flexbox;
-    justify-content:center;
+    .matrix-header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+
+  }
+
+    .nav {
+    display:flex;
+    justify-content: space-evenly;
+    justify-items:space-evenly;
+    align-items: center;
   }
 
   .button {
-  background-color:rgb(1, 181, 1);
+  background-color:#00ff80;
   border-radius: 5px;
   padding-left: 5px; 
    padding-right: 5px; 
    cursor: pointer;
 }
 
+.button:hover {
+  background-color: #9effcf;
+  cursor: pointer;
+}
 
-  .header {
-    display: inline-flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-
-  }
-
-    .div {
-    background-color: rgb(255, 255, 255); opacity:75%;
-    border-radius:5%;
+    .textoverlaygrid1 {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
   
   }
 
-  .nav {
-    display:flexbox;
-    justify-content: space-between;
-    justify-items:space-between;
-    align-items: center;
+    /*Image 1 in Grid1*/
+.Image1 {
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+  .textoverlaygrid2 {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+
   }
 
-  .p {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+  /*Image 2 in grid2*/
+.image2 {
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
 
-  }
+.textoverlaygrid3 {
+  display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+
+}
+
+/*Image 3 in grid3*/
+.image3 {
+  width: 250px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.image4 {
+   width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.image5 {
+   width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
 
 body {
-  margin: 0;
-  /* allow scrolling */
-  min-height: 100vh;
-  background-color: rgb(236, 236, 236);
+  background-color: black;
+  color:#00ff80;
+
 }
 
-/* background layers */
-body::before,
-body::after {
-  content: "";
-  position: absolute; /* not fixed! */
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* keeps image fixed while page scrolls */
-  transition: opacity 30s ease-in-out;
-  z-index: -1; /* push behind content */
+/*WHATSAPP FLOAT*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  RIGHT: 20px;
+  z-index: 1000;
+  text-decoration: none;
 }
 
-body::before {
-  background-image: url("background\ 2.png");
-  opacity: 1;
-  background-color: silver;
+.whatsapp-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
-body::after {
-  background-image: url("background\ img3.png");
-  opacity: 0;
-  animation: fadeBg 30s infinite alternate;
+.whatsapp-icon:hover {
+  transform: scale(1.1);
 }
 
-body {
-  background: 
-    url("geometric-grid-pattern-vector-2486119.jpg") center/cover repeat,
-    rgb(236, 236, 236); /* color behind everything */
+/*FLOAT*/
+.whatsapp-float {
+  animation: float 2s ease-in-out infinite;
 }
 
-@keyframes fadeBg {
-  0%   { opacity: 0; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; }
-}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 
-
+/*FOOTER*/
 .footer {
   position: fixed;
   bottom: 0%;
   width: 100%;
   background-color: rgb(255, 255, 255);
+  color: black;
+}
 }
 
-
+/*big screen-sizes*/
 @media (max-width : 1200px) {
 
-  .logo {
-    width: 100px;
-    height: 100px;
-    display:flexbox;
-    justify-content:center;
-  }
-
-
-  .header {
+    .matrix-header {
     display: inline-flex;
     justify-content: center;
     justify-items: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
     width: 100%;
+
   }
 
-     .div {
-    background-color: rgb(255, 255, 255); opacity:75%;
-    border-radius:5%;
-  
+    .nav {
+    display:flex;
+    justify-content: space-evenly;
+    justify-items:space-evenly;
+    align-items: center;
   }
 
-    .button {
-  background-color: rgb(1, 181, 1);
+  .button {
+  background-color:#00ff80;
   border-radius: 5px;
-  padding-right: 5px;
   padding-left: 5px; 
+   padding-right: 5px; 
    cursor: pointer;
 }
 
-  .nav {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-  }
-
-  .p {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-
-  }
-
-body {
-  margin: 0;
-  /* allow scrolling */
-  min-height: 100vh;
-  background-color: rgb(236, 236, 236);
+.button:hover {
+  background-color: #9effcf;
+  cursor: pointer;
 }
 
-/* background layers */
-body::before,
-body::after {
-  content: "";
-  position: absolute; /* not fixed! */
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* keeps image fixed while page scrolls */
-  transition: opacity 30s ease-in-out;
-  z-index: -1; /* push behind content */
-}
-
-body::before {
-  background-image: url("background\ 2.png");
-  opacity: 1;
-  background-color: silver;
-}
-
-body::after {
-  background-image: url("background\ img3.png");
-  opacity: 0;
-  animation: fadeBg 30s infinite alternate;
-}
-
-body {
-  background: 
-    url("geometric-grid-pattern-vector-2486119.jpg") center/cover repeat,
-    rgb(236, 236, 236); /* color behind everything */
-}
-
-
-@keyframes fadeBg {
-  0%   { opacity: 0; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-}
-
-.footer {
-  position: fixed;
-  bottom: 0%;
-  width: 100%;
-   background-color: rgb(255, 255, 255);
-}
-
-
-@media (max-width : 900px) {
-
-  .logo {
-    width: 100px;
-    height: 100px;
-    display:flexbox;
-    justify-content:center;
-  }
-
-       .div {
-    background-color: rgb(255, 255, 255); opacity:75%;
-    border-radius:5%;
+    .textoverlaygrid1 {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
   
   }
 
-  .header {
-    display: inline-flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-
-
-  }
-
-    .button {
-  background-color: rgb(1, 181, 1);
-  border-radius: 5px;
-  padding-right: 5px;
-  padding-left: 5px;  
-   cursor: pointer;
+    /*Image 1 in Grid1*/
+.Image1 {
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
 }
 
-  .nav {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-  }
-
-  .p {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+  .textoverlaygrid2 {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
 
   }
+
+  /*Image 2 in grid2*/
+.image2 {
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.textoverlaygrid3 {
+  display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+
+}
+
+/*Image 3 in grid3*/
+.image3 {
+  width: 250px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.image4 {
+   width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.image5 {
+   width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
 
 body {
-  margin: 0;
-  /* allow scrolling */
-  min-height: 100vh;
-  background-color: rgb(236, 236, 236);
+  background-color: black;
+  color:#00ff80;
+
 }
 
-/* background layers */
-body::before,
-body::after {
-  content: "";
-  position: absolute; /* not fixed! */
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* keeps image fixed while page scrolls */
-  transition: opacity 30s ease-in-out;
-  z-index: -1; /* push behind content */
-}
-
-body::before {
-  background-image: url("background\ 2.png");
-  opacity: 1;
-  background-color: silver;
-}
-
-body::after {
-  background-image: url("background\ img3.png");
-  opacity: 0;
-  animation: fadeBg 30s infinite alternate;
-}
-
-body {
-  background: 
-    url("geometric-grid-pattern-vector-2486119.jpg") center/cover repeat,
-    rgb(236, 236, 236); /* color behind everything */
-}
-
-
-@keyframes fadeBg {
-  0%   { opacity: 0; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-}
-
-.footer {
+/*WHATSAPP FLOAT*/
+.whatsapp-float {
   position: fixed;
-  bottom: 0%;
-  width: 100%;
-   background-color: rgb(255, 255, 255);
+  bottom: 20px;
+  RIGHT: 20px;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+/*FLOAT*/
+.whatsapp-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 
-@media (max-width : 600px) {
-
-  .logo {
-    width: 100px;
-    height: 100px;
-    display:flexbox;
-    justify-content:center;
-  }
-
-  .header {
-    display: inline-flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-  }
-
-    .div {
-    background-color: rgb(255, 255, 255); opacity:75%;
-    border-radius:5%;
-  
-  }
-
-    .button {
-  background-color: rgb(1, 181, 1);
-  border-radius: 5px;
-  padding-right: 5px;
-  padding-left: 5px; 
-   cursor: pointer;
-}
-
-  .slogan {
-    display: inline-flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-
-  }
-
-  .nav {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    gap: space-evenly;
-  }
-
-  .p {
-    display:flexbox;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-
-  }
-
-  body {
-  margin: 0;
-  /* allow scrolling */
-  min-height: 100vh;
-  background-color: rgb(236, 236, 236);
-}
-
-/* background layers */
-body::before,
-body::after {
-  content: "";
-  position: absolute; /* not fixed! */
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* keeps image fixed while page scrolls */
-  transition: opacity 30s ease-in-out;
-  z-index: -1; /* push behind content */
-}
-
-body::before {
-  background-image: url("background\ 2.png");
-  opacity: 1;
-  background-color: silver;
-}
-
-body::after {
-  background-image: url("background\ img3.png");
-  opacity: 0;
-  animation: fadeBg 30s infinite alternate;
-}
-
-body {
-  background: 
-    url("geometric-grid-pattern-vector-2486119.jpg") center/cover repeat,
-    rgb(236, 236, 236); /* color behind everything */
-}
-
-
-@keyframes fadeBg {
-  0%   { opacity: 0; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-}
-
+/*FOOTER*/
 .footer {
   position: fixed;
   bottom: 0%;
   width: 100%;
   background-color: rgb(255, 255, 255);
-  
+  color: black;
+}
 }
 
 
+/*Tablets*/
+@media (max-width : 650px) {
 
+    .header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+
+  }
+
+    .nav {
+    display:flex;
+    justify-content: space-evenly;
+    justify-items:space-evenly;
+    align-items: center;
+  }
+
+  .button {
+  background-color:#00ff80;
+  border-radius: 5px;
+  padding-left: 5px; 
+   padding-right: 5px; 
+   cursor: pointer;
+}
+
+.button:hover {
+  background-color: #9effcf;
+  cursor: pointer;
+}
+
+    .textoverlaygrid1 {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+  
+  }
+
+    /*Image 1 in Grid1*/
+.Image1 {
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+  .textoverlaygrid2 {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+
+  }
+
+  /*Image 2 in grid2*/
+.image2 {
+  width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.textoverlaygrid3 {
+  display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+
+}
+
+/*Image 3 in grid3*/
+.image3 {
+  width: 250px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.image4 {
+   width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.image5 {
+   width: 250px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+
+body {
+  background-color: black;
+  color:#00ff80;
+
+}
+
+/*WHATSAPP FLOAT*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  RIGHT: 20px;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+/*FLOAT*/
+.whatsapp-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+/*FOOTER*/
+.footer {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+}
+
+/*tablets=phones*/
+@media (max-width : 500px) {
+
+    .matrix-header {
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 100%
+
+  }
+
+    .nav {
+    display:flex;
+    justify-content: space-evenly;
+    justify-items:space-evenly;
+    align-items: center;
+  }
+
+  .button {
+  background-color:#00ff80;
+  border-radius: 5px;
+  padding-left: 5px; 
+   padding-right: 5px; 
+   cursor: pointer;
+}
+
+.button:hover {
+  background-color: #9effcf;
+  cursor: pointer;
+}
+
+    .textoverlaygrid1 {
+    display:grid;
+    grid-template-columns: 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+     justify-items: center;
+    align-items: center;
+    padding: 10px;
+    max-width: 100%;
+  
+  }
+
+    /*Image 1 in Grid1*/
+.image1 {
+  width: 150px;
+  height: 100px;
+  border-radius: 1rem;
+  max-width: 100%;
+}
+
+  .textoverlaygrid2 {
+    display:grid;
+    grid-template-columns: 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+     justify-items: center;
+    align-items: center;
+    padding: 10px;
+    max-width: 100%;
+
+  }
+
+  /*Image 2 in grid2*/
+.image2 {
+  width: 150px;
+  height: 100px;
+  border-radius: 1rem;
+}
+
+.textoverlaygrid3 {
+  display:grid;
+    grid-template-columns: 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius:1rem;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    max-width: 100%;
+
+}
+
+/*Image 3 in grid3*/
+.image3 {
+  width: 150px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.image4 {
+   width: 150px;
+  height: 100px;
+  border-radius: 1rem;
+}
+
+.image5 {
+   width: 150px;
+  height: 100px;
+  border-radius: 1rem;
+}
+
+
+body {
+  background-color: black;
+  color:#00ff80;
+   overflow-x: hidden;
+
+}
+
+/*WHATSAPP FLOAT*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  RIGHT: 20px;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+/*FLOAT*/
+.whatsapp-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+/*FOOTER*/
+.footer {
+  position: static;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+}
 

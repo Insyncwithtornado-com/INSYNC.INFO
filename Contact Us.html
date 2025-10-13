@@ -11,47 +11,137 @@
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo+Black&family=Bebas+Neue&family=El+Messiri:wght@400..700&family=Michroma&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 </head>
 
- <header class="header">
+<!-- === MATRIX STICKY HEADER === -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 
-      <img src="IINSYCWITHTORNADO LOGO.png" alt="insync-logo" class="logo">
+<header class="matrix-header">
+  <canvas id="matrix-bg"></canvas>
+  <div class="header-text">REACH OUT AND LET US HANDLE OUR END</div>
+</header>
 
-     <h1 class="Sync-In">
-      Sync In
-    </h1>
+<style>
+.matrix-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: black;
+  z-index: 1000;
+}
 
-  </header>
+.matrix-header canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+  background: black;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ff80;
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px #00ff80, 0 0 15px #00ff80;
+  animation: floatText 5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes floatText {
+  0%,100% { transform: translate(-50%, -50%) translateY(0); }
+  50%     { transform: translate(-50%, -50%) translateY(-6px); }
+}
+</style>
+
+<script>
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+
+const letters = '01INSYNC@#$%&';
+const fontSize = 14;
+let columns = Math.floor(canvas.width / fontSize);
+const drops = Array.from({ length: columns }, () => Math.random() * canvas.height);
+
+// 🐢 Slow movement (adjust speed here if needed)
+const speed = 0.05; // was 0.3 — now much slower
+
+function draw() {
+  // Very gentle fading effect
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff80';
+  ctx.font = fontSize + 'px monospace';
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops[i] += speed;
+    if (drops[i] * fontSize > canvas.height) drops[i] = 0;
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  columns = Math.floor(canvas.width / fontSize);
+});
+</script>
 
 <body class="body">
 
-  <div class="div">
-    <u>
+     <u>
     <h3 class="reach-out">
-      Point us in the right direction and let us do what we do.
+      POINT US IN THE RIGHT DIRECTION AND LET US DO WHAT WE DO.
     </h3>
     </u>
+
+  <div class="textoverlay">
     </div>
 
-    <nav class="nav">
-     <a href="index.html" class="nav">Home</a>
-    <a href="About.html" class="nav">About us</a>
-    <a href="Projects.html" class="nav">Projects</a>
-  <button class="button">
-    <a href="Contact Us.html" class="nav">Contact us</a>
-    </button>
-    </nav>
+     <nav class="nav">
+      
+    <a href="index.html" class="nav">
+      HOME
+    </a>
+    
+    <a href="About.html" class="nav">
+      ABOUT
+    </a>
+    
+    <a href="Projects.html" class="nav">
+      PROJECTS
+    </a>
+    <a href="Contact Us.html" class="nav">
+      <button class="button">CONTACT US</button>
+    </a>
+     </nav>
+      <hr>
+
     <br>
 
-      <div class="div">
         <u>
     <h2>
       Contact Us
       </h2>
       </u>
+
+      <div class="textoverlay">
       </div>
 
        <br> <br>
 
-         <div class="div">
+         <div class="textoverlay">
        <p class="p">
   &#9993; <a href="mailto:Mthobisi.md@insyncwithtornado.info">Mthobisi.md@insyncwithtornado.info</a>
   <br>  <br>
@@ -69,8 +159,10 @@
 
   <br> <br>
 
- 
-
+ <a href="https://wa.me/27749232812" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+<BR><br>
 </body>
 
  <footer class="footer">

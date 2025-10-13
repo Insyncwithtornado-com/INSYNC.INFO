@@ -11,56 +11,143 @@
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo+Black&family=Bebas+Neue&family=El+Messiri:wght@400..700&family=Michroma&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 </head>
 
-  <header class="header">
-      <img src="IINSYCWITHTORNADO LOGO.png" alt="insync-logo" class="logo">
-        
-     <h1 class="company-name">
-      Welcome to Insync
-    </h1>
-  
+<!-- === MATRIX STICKY HEADER === -->
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+<header class="matrix-header">
+  <canvas id="matrix-bg"></canvas>
+  <div class="header-text">YOU MADE THE RIGHT CHOICE, SYNC IN!</div>
 </header>
 
+<style>
+.matrix-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: black;
+  z-index: 1000;
+}
+
+.matrix-header canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+  background: black;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00ff80;
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 8px #00ff80, 0 0 15px #00ff80;
+  animation: floatText 5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes floatText {
+  0%,100% { transform: translate(-50%, -50%) translateY(0); }
+  50%     { transform: translate(-50%, -50%) translateY(-6px); }
+}
+</style>
+
+<script>
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+
+const letters = '01INSYNC@#$%&';
+const fontSize = 14;
+let columns = Math.floor(canvas.width / fontSize);
+const drops = Array.from({ length: columns }, () => Math.random() * canvas.height);
+
+// 🐢 Slow movement (adjust speed here if needed)
+const speed = 0.05; // was 0.3 — now much slower
+
+function draw() {
+  // Very gentle fading effect
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff80';
+  ctx.font = fontSize + 'px monospace';
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops[i] += speed;
+    if (drops[i] * fontSize > canvas.height) drops[i] = 0;
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  columns = Math.floor(canvas.width / fontSize);
+});
+</script>
 
  <body class="body">
 
-  <div class="div">
   <u>
     <h3 class="company-slogan">
-      If we co-sign it, then you know its legit.
+      IF WE CO-SIGN IT, THEN YOU KNOW IT'S LEGIT.
     </h3>
     </u>
-    </div>
+    
 
     <nav class="nav">
-    <a href="index.html" class="nav">Home</a>
-    <a href="About.html" class="nav">About us</a>
-    <a href="Projects.html" class="nav">Projects</a>
-    <button class="button">
-    <a href="Contact Us.html" class="nav">Contact us</a>
-    </button>
-    </nav>
+      
+    <a href="index.html" class="nav">
+      HOME
+    </a>
+    
+    <a href="About.html" class="nav">
+      ABOUT
+    </a>
+    
+    <a href="Projects.html" class="nav">
+      PROJECTS
+    </a>
+    <a href="Contact Us.html" class="nav">
+      <button class="button">CONTACT US</button>
+    </a>
+
+     </nav>
+     <hr>
 
     <br><br>
 
-  
-  <div class="div">
-
-
-  <h2>
+    <h2>
     <u>
-    Web Development Services
+    WEB DEVELOPMENT SERVICES
     </u>
   </h2>
-  <br><br>
-
-  <h4>
-    We build professional websites that are user friendly, easy to navigate, optimised for search engines and mobile responsiveness.
-  </h4>
   
+  <div class="textoverlaygrid1">
 
-  <br><br>
+  <div class="grid1box1">
+  <h4>
+   We design and build modern, high-performance websites that help your brand grow online. Whether you need a simple static site or a powerful dynamic platform — we’ve got you covered.
+  </h4>
+  </div>
+  
+   <div class="grid1box2">
+    <img src="Matrix (1).png" class="Image1">
+  </div>
 
-
+  <div class="grid1box1">
   <h4>
     We tailor make end user experience to suit your brand and your target audience.
   </h4>
@@ -68,55 +155,206 @@
   <h4>
     Quick, High quality, Reliable and Affordable Websites at:
     <br><br>
-    Starter (1–6 pages, R4500)
+    STARTER (1–6 PAGES) OR DYNAMIC SITE (1-6 PAGES)
+    </h4>
+    </div>
 
-    <br>
+   </div>
 
-
+    <hr>
+    <br><br>
+ 
+  <h2>
+    <u>
+    BUSINESS BROKERAGE SERVICES
+    </u>
+  </h2>
+    
+  <div class="textoverlaygrid2">
+  
+<div class="grid2box1">
+  <h4>
+    We bridge the gap between manufactures and consumers in very unique ways, using tried and tested methods that work. <br>
+    With over a decade of Business to Business sales practice.
   </h4>
   </div>
 
-  <br><br>
- 
-    
-  <div class="div">
-
-  <h2>
-    <u>
-    Business Brokerage Services
-    </u>
-  </h2>
-  
-
-  <br><br>
-
-  
-  
-
-  <h4>
-    We bridge the gap between manufactures and consumers in very unique ways, using tried and tested methods that work. <br>
-    With over a decade of Business to Business sales practice, we use our resources, Expertise and 
+  <div class="grid2box1">
+   <h4>
+    we use our resources, Expertise and 
     networks to increase your sales with no upfront cost.
-  </h4>
-  
-
-  <br><br>
-
-  
-  
-
-
-  <h4>
     Our approach is tailor made to for your organization and your position within the market.
   </h4>
   </div>
 
+  <div class="grid2box2">
+    <img src="background img3.png" class="image2">
+  </div>
 
+  </div>
+  <br>
+  <hr>
+<br><br>
+
+   <u>
+  <h2>
+    OUR INCEPTION
+  </h2>
+  </u>
+
+  <div class="textoverlaygrid3">
+
+    <div class="grid3box2">
+    <img src="IINSYCWITHTORNADO LOGO.png" class="image3">
+  </div>
+
+    <div class="grid3box1">
+  
+  <p>
+    Initially we began as a Biker Apparel online store in 2024 December, that should account for our over the top name. Within months of operating, we realized a potential for more, a better positioning within the grand scheme of things. <br> <br>
+    </p>
+    
+    <p>
+    Within ourselves we had practically seasoned marketers, Project Managers and web developers with OVER A DECADE of experience in their fields.
+  </p>
+  </div>
+
+  </div>
+<hr>
+  <br> <br>
+
+     <u>
+  <h2>
+    OUR EVOLUTION
+  </h2>
+  </u>
+
+  <div class="textoverlay">
+ 
+  <br>
+
+  <p>
+    We naturally gravitated towards what we were good at, only this time we were doing it on our terms and for our benefit. <br> <br>
+  </p>
+
+  <img src="Matrix (2).png" class="image4">
+
+      <p><b>
+    REST ASSURED OUR SELF INTEREST AND HONESTY ABOUT IT, IS EXACTLY WHAT MAKES US GREAT AT WHAT WE DO.</b>
+  </p>
+
+  <p><b>
+    <br><Br> IT IS OUR SELF INTEREST THAT DRIVES US TO DELIVER AND BUILD BRIDGES.<BR><br></b>
+    </p>
+
+    <p><b>
+      GIVE 200% ALL THE TIME, NOT FOR YOU BUT FOR US <BR><br></b>
+      </p>
+
+      
+      <p><b>
+      FOR OUR CREDIBILITY AND OUR FUTURE AS PARTNERS WITH ALL WHO COME ACROSS OUR STORM.
+      </b>
+      </div>
+  </p>
+  <br>
+    <hr>
+
+     <br>
+
+      <u>
+   <h2>
+    OUR PORTFOLIO
+   </h2>
+   </u>
+   
+
+  <br><br>
+
+  <u>
+    <h2>
+    WEB DEVELOPMENT SERVICES
+    </h2>
+    </u>
+
+   <div class="textoverlay">
+
+  <br><br>
+<p>
+ 1. We are our first client and we hope to add your business to our wall of successful projects
+</p>
+<br><br>
+<p>
+  <a href="">
+    2. Proof of concept LAW FIRM WEBSITE.
+ </a>
+</p>
+<br><br>
+</div>
+<hr>
+<br><br>
+
+ <h2><u>
+      BUSINESS BROKERAGE SERVICES
+    </u></h2>
+
+    <img src="background 2.png" class="image5">
+
+   <div class="textoverlay">
+    <br><br>
+  <p>
+<a href="https://www.mobilecrushersturkey.com/products/2/mobile-crushing" target="_blank">1. We have had the luxury of being a Marketing partner for Boratas Mobile Crushers and Screening Equipment</a>
+</p>
+<br><br>
+<a href="https://web.facebook.com/p/Moafrica1-Security-Services-61579188091651/?_rdc=1&_rdr#" target="_blank">2. We also grow and break bread with MOAFRICA1 SECURITY SERVICES</a>
+</p>
+<br><br>
+  <p>
+   <a href="https://www.tiktok.com/@wordsmithda1st/video/7520407237081386296?is_from_webapp=1&sender_device=pc&web_id=7548144982503605767" target="_blank">3. In the music industry we have built a cult like following for an Icon</a>
+   </p>
+<br><br>
+   </div>
+<br>
+      <hr>
+
+    <br>
+
+        <u>
+    <h2>
+      Contact Us
+      </h2>
+      </u>
+
+      <div class="textoverlay">
+      </div>
+
+       <br> <br>
+
+         <div class="textoverlay">
+       <p class="p">
+  &#9993; <a href="mailto:Mthobisi.md@insyncwithtornado.info">Mthobisi.md@insyncwithtornado.info</a>
+  <br>  <br>
+</p>
+ 
+
+  <br>  <br>
+
+   
+  <p class="p">
+  &#128241;<a href="tel:+27749232812">+27 74 923 2812</a>
+
+  </p>
+  </div>
+
+  <br> <br>
 
   </body>
 
-   <br><br>
+  <a href="https://wa.me/27749232812" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
 
+   <br><br>
     
   <footer class="footer">
     copyright @2024 Insync. all rights reserved. developed by Insyncwithtornado.
